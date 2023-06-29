@@ -1,19 +1,22 @@
 var generateBtn = document.querySelector("#generate");
+// var userInput = window.prompt("Please select a number between 8 and 128:");
 
 
-var userInput = generateBtn.addEventListener("click", function() {
-  window.prompt("Please select a number between 8 and 128:");
+var userChoice = generateBtn.addEventListener("click", function() {
+  var userInput = window.prompt("Please enter a number between 8 and 128:");
   writePassword();
 })
 
+console.log(userInput);
+
 function writePassword() {  
 if (userInput < 8 || userInput > 128) {
-        alert("PLEASE ENTER A NUMBER WITHIN THE GIVEN RANGE");
-        prompt("Please select a number between 8 and 128:");
+        window.alert("PLEASE ENTER A NUMBER WITHIN THE GIVEN RANGE");
+        window.prompt("Please enter a number between 8 and 128:");
       } else {
-        alert("Good job!");
-      };
-    }
+        window.alert("Good job!");
+      }
+    };
 
 
 
