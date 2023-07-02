@@ -1,10 +1,7 @@
 var generateBtn = document.querySelector("#generate");
-
-// var userObject = {};
-// var userInput = generatePass.data;
+var letters = ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_+", ]
 
 
-// writePassword ();
 generateBtn.addEventListener("click", function() {
   stepOne ();
 })
@@ -24,6 +21,57 @@ function stepOne () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var userObject = {};
+// var userInput = generatePass.data;
+
+
+// writePassword ();
 // function writePassword () {
   
 //         }};
@@ -49,43 +97,6 @@ function stepOne () {
 // console.log(userInput);
 
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // var userObject = userInput;
 // var 
