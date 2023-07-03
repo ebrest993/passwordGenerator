@@ -1,6 +1,7 @@
 var generateBtn = document.querySelector("#generate");
 var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_+" .split("");
-
+    // var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"];
+let passArray = [];
 
 generateBtn.addEventListener("click", function() {
   stepOne ();
@@ -17,14 +18,18 @@ function stepOne () {
   } else {
     window.alert("Good job!");
 
-    // var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_" .split("");
-    // var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"];
+    for (var i = 0; i < userInput; i++) {
+      let randChar = randNum(letters.length-1);
+      passArray.push(letters[randChar]);
+    }
+    console.log(passArray);
 
-    for (var i = 0; i <= userInput; i++) {
-      console.log(letters[i]);    
-  }}}
+  }
+}
 
-
+function randNum (input) {
+  return Math.floor(Math.random() * input);
+};
 
 
 
