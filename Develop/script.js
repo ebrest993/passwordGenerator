@@ -1,5 +1,5 @@
 var generateBtn = document.querySelector("#generate");
-var letters = ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_+", ]
+var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_+" .split("");
 
 
 generateBtn.addEventListener("click", function() {
@@ -7,21 +7,22 @@ generateBtn.addEventListener("click", function() {
 })
 
 function stepOne () {
-  var x = window.prompt("Please select a number between 8 and 128:");
+  var userInput = window.prompt("Please select a number between 8 and 128:");
   
-  if (x === null) {
+  if (userInput === null) {
     return;
-  } else if (x <= 7 || x >= 129) {
+  } else if (userInput < 8 || userInput > 128) {
     window.alert("PLEASE ENTER A NUMBER WITHIN THE GIVEN RANGE");
     stepOne ();
   } else {
     window.alert("Good job!");
-}}
 
+    // var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_" .split("");
+    // var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"];
 
-
-
-
+    for (var i = 0; i <= userInput; i++) {
+      console.log(letters[i]);    
+  }}}
 
 
 
