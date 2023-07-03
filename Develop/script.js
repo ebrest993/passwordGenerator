@@ -1,15 +1,21 @@
-var generateBtn = document.querySelector("#generate");
-var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_+" .split("");
-    // var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"];
+let generateBtn = document.querySelector("#generate");
+let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_+" .split("");
 let passArray = [];
+
+// The following calls the function stepOne when the "Generate Password" button is clicked.
 
 generateBtn.addEventListener("click", function() {
   stepOne ();
 })
 
+// The stepOne function accomplishes the following:
+  // Prompts the user to select a number between 8 and 128. If the number is outside of that range it makes them select again. 
+  // If the user selects "Cancel" it ends the function.
+  // The input is then used to select that many random variables.
+  // Those variables are then pushed into the same empty array "passArray".
+
 function stepOne () {
-  var userInput = window.prompt("Please select a number between 8 and 128:");
-  
+  let userInput = window.prompt("Please select a number between 8 and 128:");
   if (userInput === null) {
     return;
   } else if (userInput < 8 || userInput > 128) {
@@ -17,26 +23,28 @@ function stepOne () {
     stepOne ();
   } else {
     window.alert("Good job!");
-
     for (var i = 0; i < userInput; i++) {
       let randChar = randNum(letters.length-1);
       passArray.push(letters[randChar]);
     }
     console.log(passArray);
-
   }
 }
+
+// The following function returns random as many random items as the parameter calls for.
 
 function randNum (input) {
   return Math.floor(Math.random() * input);
 };
 
-
-
-
-
-
-
+// Next I need to:
+//   Add more window.prompts for the following:
+//     lowercase, uppercase, or both
+//     numeric: yes or no 
+//     special characters: yes or no 
+//   A window.confirm needs to be added to confirm the choices
+//   Password is generated
+//   Password is displayed in "#password" text area
 
 
 
