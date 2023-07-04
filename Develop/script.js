@@ -38,6 +38,7 @@ function randNum (input) {
 };
 
 // Next I need to:
+//   Separate arrays are created for each of the user selections
 //   A window.prompt is added:
 //      lowercase, uppercase, or both
 //   A window.confirm is added:
