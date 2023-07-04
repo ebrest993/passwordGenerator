@@ -1,6 +1,11 @@
 let generateBtn = document.querySelector("#generate");
-let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_+" .split("");
+let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 !#$%&'()*+,-./:;<=>?@[\^]_`{}|~" .split("");
 let passArray = [];
+let lowLetters = "abcdefghijklmnopqrstuvwxyz" .split("");
+let upLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" .split("");
+let numbers = "1234567890" .split("");
+let special = " !#$%&'()*+,-./:;<=>?@[\^]_`{}|~" .split("");
+
 
 // The following calls the function numberChar when the "Generate Password" button is clicked.
 
@@ -59,6 +64,15 @@ function confirmSpecial () {
   }
 }
 
+// THIS FUNCTION ASKS ABOUT NUMBERS (DOES NOT RECORD THE ANSWER)
+function confirmNumber () {
+  let passNumber = window.confirm("Would you like your password to contain numbers?");
+  if (passNumber === true) {
+    window.alert("Adding numbers to the mix...");
+  } else {
+    window.alert("86 numbers. Copy that.");
+  }
+}
 
 // THIS FUNCTION ASKS ABOUT UPPER/LOWERCASE CHARACTERS (DOES NOT RECORD THE ANSWER)
 function selectCase () {
