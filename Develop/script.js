@@ -55,7 +55,6 @@ function confirmPass () {
   let passSpecChar = window.confirm("Would you like your password to contain special characters?");
     if (passSpecChar === true) {
       availSelection = availSelection.concat(special);
-        window.alert("WHOAAAAAA");
     }
   console.log(availSelection);
 
