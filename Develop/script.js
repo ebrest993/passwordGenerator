@@ -10,7 +10,7 @@ let special = " !#$%&'()*+,-./:;<=>?@[\^]_`{}|~" .split("");
 // The following calls the function numberChar when the "Generate Password" button is clicked.
 
 generateBtn.addEventListener("click", function() {
-  selectCase ();
+  numberChar ();
 })
 
 // The numberChar function accomplishes the following:
@@ -32,6 +32,7 @@ function numberChar () {
       let randChar = randNum(letters.length-1);
       passArray.push(letters[randChar]);
     }
+    selectCase();
     console.log(passArray);
   }
 }
@@ -41,6 +42,36 @@ function numberChar () {
 function randNum (input) {
   return Math.floor(Math.random() * input);
 };
+
+// THIS FUNCTION ASKS ABOUT UPPER/LOWERCASE CHARACTERS (DOES NOT RECORD THE ANSWER)
+function selectCase () {
+  let passCase = window.prompt("Would you like your password to contain uppercase characters, lowercase characters, or both?", "Enter U, L, or B");
+  if (passCase === "u" || 
+      passCase === "l" || 
+      passCase === "b" || 
+      passCase === "U" || 
+      passCase === "L" || 
+      passCase === "B") {
+    window.alert("Lookit you go!");
+  } else {
+    window.alert("Please enter U for Uppercase, L for lowercase, or B for both"); 
+    selectCase ();
+  }  
+  confirmNumber();
+}
+
+// THIS FUNCTION ASKS ABOUT NUMBERS (DOES NOT RECORD THE ANSWER)
+function confirmNumber () {
+  let passNumber = window.confirm("Would you like your password to contain numbers?");
+  if (passNumber === true) {
+    window.alert("Adding numbers to the mix...");
+    confirmSpecial();
+  } else {
+    window.alert("86 numbers. Copy that."); 
+    confirmSpecial();
+  }
+ 
+}
 
 // Next I need to:
 //   Separate arrays are created for each of the user selections
@@ -58,39 +89,8 @@ function randNum (input) {
 function confirmSpecial () {
   let passSpecChar = window.confirm("Would you like your password to contain special characters?");
   if (passSpecChar === true) {
-    window.alert("sadkgj");
+    window.alert("WHOAAAAAA");
   } else {
     window.alert("Whoa whoa whoa... are you coding right now? I THINK SO");
   }
 }
-
-// THIS FUNCTION ASKS ABOUT NUMBERS (DOES NOT RECORD THE ANSWER)
-function confirmNumber () {
-  let passNumber = window.confirm("Would you like your password to contain numbers?");
-  if (passNumber === true) {
-    window.alert("Adding numbers to the mix...");
-  } else {
-    window.alert("86 numbers. Copy that.");
-  }
-}
-
-// THIS FUNCTION ASKS ABOUT UPPER/LOWERCASE CHARACTERS (DOES NOT RECORD THE ANSWER)
-function selectCase () {
-  let passCase = window.prompt("Would you like your password to contain uppercase characters, lowercase characters, or both?", "Enter U, L, or B");
-  if (passCase === "u" || 
-      passCase === "l" || 
-      passCase === "b" || 
-      passCase === "U" || 
-      passCase === "L" || 
-      passCase === "B") {
-    window.alert("Lookit you go!");
-    return;
-  } else if (passCase === null) {
-    return;
-  } else {
-  window.alert("Please enter U for Uppercase, L for lowercase, or B for both");
-  selectCase ();
-  }
-
-};
-
