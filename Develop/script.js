@@ -10,7 +10,7 @@ let special = " !#$%&'()*+,-./:;<=>?@[\^]_`{}|~" .split("");
 // The following calls the function numberChar when the "Generate Password" button is clicked.
 
 generateBtn.addEventListener("click", function() {
-  numberChar ();
+  selectCase ();
 })
 
 // The numberChar function accomplishes the following:
@@ -77,15 +77,20 @@ function confirmNumber () {
 // THIS FUNCTION ASKS ABOUT UPPER/LOWERCASE CHARACTERS (DOES NOT RECORD THE ANSWER)
 function selectCase () {
   let passCase = window.prompt("Would you like your password to contain uppercase characters, lowercase characters, or both?", "Enter U, L, or B");
-  if (passCase === null) {
-    return;
-  } else if (passCase === "u","l","b","U","L","B") {
+  if (passCase === "u" || 
+      passCase === "l" || 
+      passCase === "b" || 
+      passCase === "U" || 
+      passCase === "L" || 
+      passCase === "B") {
     window.alert("Lookit you go!");
+    return;
+  } else if (passCase === null) {
     return;
   } else {
   window.alert("Please enter U for Uppercase, L for lowercase, or B for both");
-  stepNext();
-}
-  console.log(passCase);
+  selectCase ();
+  }
+
 };
 
