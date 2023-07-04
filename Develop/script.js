@@ -2,25 +2,25 @@ let generateBtn = document.querySelector("#generate");
 let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]<>?:{}!@#$%^&*()_+" .split("");
 let passArray = [];
 
-// The following calls the function stepOne when the "Generate Password" button is clicked.
+// The following calls the function numberChar when the "Generate Password" button is clicked.
 
 generateBtn.addEventListener("click", function() {
-  stepOne ();
+  numberChar ();
 })
 
-// The stepOne function accomplishes the following:
+// The numberChar function accomplishes the following:
   // Prompts the user to select a number between 8 and 128. If the number is outside of that range it makes them select again. 
   // If the user selects "Cancel" it ends the function.
   // The input is then used to select that many random variables.
   // Those variables are then pushed into the same empty array "passArray".
 
-function stepOne () {
+function numberChar () {
   let passLength = window.prompt("Please select a number between 8 and 128:");
   if (passLength === null) {
     return;
   } else if (passLength < 8 || passLength > 128) {
     window.alert("PLEASE ENTER A NUMBER BETWEEN 8 AND 128");
-    stepOne ();
+    numberChar ();
   } else {
     window.alert("Good job!");
     for (var i = 0; i < passLength; i++) {
@@ -49,28 +49,28 @@ function randNum (input) {
 //   A password is displayed in "#password" text area
 
 // THIS FUNCTION ASKS ABOUT SPECIAL CHARACTERS (DOES NOT RECORD THE ANSWER)
-// function !!NEEDSANAME!! () {
-//   let passSpecChar = window.confirm("Would you like your password to contain special characters?");
-//   if (passSpecChar === true) {
-//     window.alert("sadkgj");
-//   } else {
-//     window.alert("Whoa whoa whoa... are you coding right now? I THINK SO");
-//   }
-// }
+function confirmSpecial () {
+  let passSpecChar = window.confirm("Would you like your password to contain special characters?");
+  if (passSpecChar === true) {
+    window.alert("sadkgj");
+  } else {
+    window.alert("Whoa whoa whoa... are you coding right now? I THINK SO");
+  }
+}
 
 
 // THIS FUNCTION ASKS ABOUT UPPER/LOWERCASE CHARACTERS (DOES NOT RECORD THE ANSWER)
-// function !!NEEDSANAME!! () {
-//   let passCase = window.prompt("Would you like your password to contain uppercase characters, lowercase characters, or both?", "Enter U, L, or B");
-//   if (passCase === null) {
-//     return;
-//   } else if (passCase === "u","l","b","U","L","B") {
-//     window.alert("Lookit you go!");
-//     return;
-//   } else {
-//   window.alert("Please enter U for Uppercase, L for lowercase, or B for both");
-//   stepNext();
-// }
-//   console.log(passCase);
-// };
+function selectCase () {
+  let passCase = window.prompt("Would you like your password to contain uppercase characters, lowercase characters, or both?", "Enter U, L, or B");
+  if (passCase === null) {
+    return;
+  } else if (passCase === "u","l","b","U","L","B") {
+    window.alert("Lookit you go!");
+    return;
+  } else {
+  window.alert("Please enter U for Uppercase, L for lowercase, or B for both");
+  stepNext();
+}
+  console.log(passCase);
+};
 
