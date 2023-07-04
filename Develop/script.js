@@ -15,15 +15,15 @@ generateBtn.addEventListener("click", function() {
   // Those variables are then pushed into the same empty array "passArray".
 
 function stepOne () {
-  let userInput = window.prompt("Please select a number between 8 and 128:");
-  if (userInput === null) {
+  let passLength = window.prompt("Please select a number between 8 and 128:");
+  if (passLength === null) {
     return;
-  } else if (userInput < 8 || userInput > 128) {
-    window.alert("PLEASE ENTER A NUMBER WITHIN THE GIVEN RANGE");
+  } else if (passLength < 8 || passLength > 128) {
+    window.alert("PLEASE ENTER A NUMBER BETWEEN 8 AND 128");
     stepOne ();
   } else {
     window.alert("Good job!");
-    for (var i = 0; i < userInput; i++) {
+    for (var i = 0; i < passLength; i++) {
       let randChar = randNum(letters.length-1);
       passArray.push(letters[randChar]);
     }
@@ -38,114 +38,39 @@ function randNum (input) {
 };
 
 // Next I need to:
-//   Add more window.prompts for the following:
-//     lowercase, uppercase, or both
-//     numeric: yes or no 
-//     special characters: yes or no 
-//   A window.confirm needs to be added to confirm the choices
-//   Password is generated
-//   Password is displayed in "#password" text area
+//   A window.prompt is added:
+//      lowercase, uppercase, or both
+//   A window.confirm is added:
+//      numeric: yes or no 
+//      special characters: yes or no 
+//      choices correct: yes or no
+//   Functions are made to incorporate any/all possible combinations of the selections
+//   A password is generated
+//   A password is displayed in "#password" text area
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var userObject = {};
-// var userInput = generatePass.data;
-
-
-// writePassword ();
-// function writePassword () {
-  
-//         }};
-
-// console.log(generatePass);
-
-
-
-
-// var userInput = window.prompt("Please select a number between 8 and 128:");
-
-
-// var userChoice = generateBtn.addEventListener("click", function() {
-//   window.prompt("Please enter a number between 8 and 128:");
-//   writePassword();
-// })
-
-
-
-// writePassword();
-
-// var userInput = userChoice; 
-// console.log(userInput);
-
-  
-
-// var userObject = userInput;
-// var 
-// var button = document.querySelector("#btn");
-
-// Write password to the #password input
-
-// writePassword();
-
-// function writePassword() {
-//   var charLength = alert("Please enter number of characters (8-128) below:");
-//   // return prompt("Hello, World!");
-// };
-
-// function promptTime(
-//   generateBtn.addEventListener: "click", writePassword();
-//   prompt = (";sldgahw;ogh");
-// )
-
-// function promptTime ();
-
-// function writePassword(
-//   if (charLength < 8 || charLength > 128) {
-//     alert("PLEASE ENTER A NUMBER WITHIN THE GIVEN RANGE");
-//     prompt("Please enter number of characters (8-128) below:");
+// THIS FUNCTION ASKS ABOUT SPECIAL CHARACTERS (DOES NOT RECORD THE ANSWER)
+// function !!NEEDSANAME!! () {
+//   let passSpecChar = window.confirm("Would you like your password to contain special characters?");
+//   if (passSpecChar === true) {
+//     window.alert("sadkgj");
 //   } else {
-//     alert("Good job!");
+//     window.alert("Whoa whoa whoa... are you coding right now? I THINK SO");
 //   }
-// );
-// function writePassword() {
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-
-  // passwordText.value = password;
-
 // }
 
-// Add event listener to generate button
+
+// THIS FUNCTION ASKS ABOUT UPPER/LOWERCASE CHARACTERS (DOES NOT RECORD THE ANSWER)
+// function !!NEEDSANAME!! () {
+//   let passCase = window.prompt("Would you like your password to contain uppercase characters, lowercase characters, or both?", "Enter U, L, or B");
+//   if (passCase === null) {
+//     return;
+//   } else if (passCase === "u","l","b","U","L","B") {
+//     window.alert("Lookit you go!");
+//     return;
+//   } else {
+//   window.alert("Please enter U for Uppercase, L for lowercase, or B for both");
+//   stepNext();
+// }
+//   console.log(passCase);
+// };
+
