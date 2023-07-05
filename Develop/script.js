@@ -57,6 +57,13 @@ function confirmPass () {
       availSelection = availSelection.concat(special);
     }
   console.log(availSelection);
+    if (passUpper === false &&
+        passLower === false &&
+        passNumber === false &&
+        passSpecChar === false) {
+          window.alert("At least one selection must be made. Please try again.");
+          return;
+        }
 
   for (var i = 0; i < passLength; i++) {
     let randChar = randNum(availSelection.length-1);
@@ -66,18 +73,3 @@ function confirmPass () {
   var textarea = document.getElementById("password");
   textarea.value = passArray.join("");
 } 
-
-
-
-// Next I need to:
-//   Separate arrays are created for each of the user selections
-//   A window.prompt is added:
-//      lowercase, uppercase, or both
-//        separate if/else statements are written to accomodate each selection and its array pusher
-//   A window.confirm is added:
-//      numeric: yes or no 
-//      special characters: yes or no 
-//      choices correct: yes or no
-//   Functions are made to incorporate any/all possible combinations of the selections
-//   A password is generated
-//   A password is displayed in "#password" text area
