@@ -5,6 +5,9 @@ Upon clicking the "Generate Password" button, a series of events occur:
 ## 1: LENGTH OF PASSWORD
 
 The user is instructed to enter a number between 8 and 128 to determine just how long their password will be.
+
+## 1a: RANGE ERROR
+
 If they choose a number less than 8 or more than 128, they are told to enter a value between 8 and 128.
 They are then sent back to the first step.
 
@@ -36,3 +39,7 @@ They then have to start from the beginning by clicking the "Generate Password" b
 ## 6: PASSWORD DISPLAY
 
 The generated password is finally generated and displayed in the text area, replacing the placeholder "Your Secure Password".
+
+## 1:
+
+![Alt text](<Assets/Screenshot 2023-07-05 125122.png>)
