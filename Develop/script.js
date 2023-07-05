@@ -1,11 +1,10 @@
 let generateBtn = document.querySelector("#generate");
-let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" .split("");
-let passArray = [];
 let lowLetters = "abcdefghijklmnopqrstuvwxyz" .split("");
 let upLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" .split("");
 let numbers = "1234567890" .split("");
 let special = " !#$%&'()*+,-./:;<=>?@[\^]_`{}|~" .split("");
 let availSelection = [];
+let passArray = [];
 let passLength = "";
 
 
@@ -38,7 +37,10 @@ function randNum (input) {
   return Math.floor(Math.random() * input);
 };
 
-// THIS FUNCTION ASKS ABOUT UPPER/LOWERCASE CHARACTERS (DOES NOT RECORD THE ANSWER)
+// The confirmPass function takes us through the rest of the process with a series of confirm windows
+  // If the user selects none of the options, the function ends and they are made to start from the beginning
+  // A for loop is included at the end to select the required number of characters
+  // The generated password is then displayed in the text area
 function confirmPass () {
   let passUpper = window.confirm("Would you like your password to contain uppercase characters?");
     if (passUpper === true) {
